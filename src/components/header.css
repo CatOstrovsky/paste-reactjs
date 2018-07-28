@@ -1,0 +1,9 @@
+.header__left > p {
+	margin-bottom: 0px;
+}
+
+header {
+	background: #056998;
+	color: #fff;
+	padding: 10px 0px;
+}

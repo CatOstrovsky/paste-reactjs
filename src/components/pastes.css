@@ -1,0 +1,53 @@
+.paste {
+    margin:  10px 0px;
+    background: #f7f7f7;
+    padding:  10px;
+    border: 1px #286b96 solid;
+    box-shadow: -1px 4px 6px #d8d7d7;
+    transition: all .25s ease;
+    display: block;
+}
+.paste p {
+    margin-bottom:  0px;
+}
+
+.paste__author {
+    font-size:  12px;
+    color: #0c99dc;
+}
+
+.paste__name {
+    color: #259a85;
+    margin-bottom:  5px;
+    margin-top:  10px;
+}
+
+.paste:hover {
+    transform: scale(1.05);
+    cursor:  pointer;
+}
+
+.paste__id {
+    min-width: 30px;
+    min-height: 30px;
+    background: white;
+    border-radius:  50%;
+    display:  flex;
+    align-items:  center;
+    justify-content:  center;
+    box-shadow: 0px 0px 2px #d2c4c4;
+    font-size:  12px;
+    margin-right: 10px;
+    align-self:  center;
+}
+
+.paste__date {
+    display:  flex;
+    align-items:  center;
+    justify-content:  center;
+}
+
+.paste__date {
+    font-size: 13px;
+    color: dimgrey;
+}
