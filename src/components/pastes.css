@@ -51,3 +51,24 @@
     font-size: 13px;
     color: dimgrey;
 }
+.details-paste  h1 {
+    margin-bottom:  0px;
+    margin-right:  5px;
+}
+
+.details-paste  h1 {
+    margin-bottom:  0px;
+    margin-right:  5px;
+}
+
+.details-paste {
+    margin-top: 20px;
+}
+
+.details-paste > .btn {
+    margin-bottom:  10px;
+}
+
+.paste:hover{
+    text-decoration: none;
+}

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './pastes.css';
 import { Link } from 'react-router-dom'
+import Highlight from 'react-highlight'
+import '../../node_modules/highlight.js/styles/dracula.css'
 
 class Paste extends Component {
 	constructor() {
@@ -33,12 +35,12 @@ class PasteDetails extends Component {
 	constructor(match){
 		super(...arguments);
 		this.codes = [
-			{ id: 1, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' },
-			{ id: 2, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' },
-			{ id: 3, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' },
-			{ id: 4, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' },
-			{ id: 5, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' },
-			{ id: 6, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' },
+			{ id: 1, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!', language: 'js' },
+			{ id: 2, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!', language: 'js' },
+			{ id: 3, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!', language: 'js' },
+			{ id: 4, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!', language: 'js' },
+			{ id: 5, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!', language: 'js' },
+			{ id: 6, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!', language: 'js' },
 		];
 	}
 
@@ -50,12 +52,17 @@ class PasteDetails extends Component {
 
 		return(
 			<div className="container details-paste">
-				<Link to={{pathname:"/"}} className="btn btn-primary">Back</Link>
+				<Link to={{pathname:"/"}} className="btn btn-primary">{'<'} Back</Link>
 				<div className="d-flex align-items-end details-paste__title-wrapper">
 					<h1>{code.name}</h1>
 					<small>{code.date}</small>
 				</div>
 				<p>By {code.author}.</p>
+				<hr/>
+				<p>Code language: {code.language}</p>
+				<Highlight className='javascript'>
+				  {code.code}
+				</Highlight>
 			</div>
 		);
 	}
@@ -66,12 +73,12 @@ class Pastes extends Component {
 		super(...arguments);
 
 		this.codes = [
-			{ id: 1, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' },
-			{ id: 2, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' },
-			{ id: 3, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' },
-			{ id: 4, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' },
-			{ id: 5, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' },
-			{ id: 6, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' },
+			{ id: 1, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' , language: 'js'},
+			{ id: 2, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' , language: 'js'},
+			{ id: 3, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' , language: 'js'},
+			{ id: 4, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' , language: 'js'},
+			{ id: 5, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' , language: 'js'},
+			{ id: 6, name: 'Simple code', author: 'Petar One', date:  new Date().toDateString(), code: 'hello world!' , language: 'js'},
 		];
 	}
 	render() {
@@ -87,6 +94,8 @@ class Pastes extends Component {
 				<div className='row listing-pastes'>
 					{renderedCodes}
 				</div>
+
+				<Link to={{pathname:'/addpaste'}} className="btn-primary btn add-paste">Add paste +</Link>
 			</div>
 		)
 	}

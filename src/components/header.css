@@ -1,4 +1,6 @@
-.header__left > p {
+.header__left p {
+	color: #fff;
+	text-decoration: none;
 	margin-bottom: 0px;
 }
 
